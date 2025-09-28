@@ -2,6 +2,8 @@
 
 [**TRY THE LIVE DASHBOARD HERE**](https://app.powerbi.com/view?r=eyJrIjoiZDdmNzNjOGYtZmIwMC00NjI2LTk4ZTUtYzRmMzNkYzRjMzRjIiwidCI6IjdlZTg0MzQ3LWM5MmMtNDFiMi1hYTIyLWNiZDM1NGFiZjcwNSJ9)
 
+
+
 This project executes a full business intelligence pipeline to transform raw ride-hailing booking data into an actionable, high-contrast dashboard for executive-level performance monitoring using Power BI.
 
 ***
@@ -36,14 +38,24 @@ The analysis provides deep insights into core service challenges:
 
 ***
 
+## 💡 Business Value: Problem, Challenge, and Solution
+
+| Area | Description | Impact | 
+ | ----- | ----- | ----- | 
+| **Business Problem** | Lack of immediate insight into the root causes of service failure (cancellations, low ratings, high turnaround times), hindering operational decision-making. | Inefficient resource allocation and difficulty in retaining both riders and drivers due to unreliable service. | 
+| **Technical Challenge** | The raw data contained non-standard timestamp formats (`DD-MM-YYYY HH:MM:SS` with non-breaking spaces) and required complex aggregation (e.g., calculating cancellation rates over 150k+ records) for fast reporting. | Initial ETL failure and slow dashboard performance on non-aggregated data. | 
+| **Analytical Solution** | Implemented a robust **Star Schema** model and deployed **dynamic tooltips** (Key Influencers, Decomposition Tree). This provides managers with instant, one-click root-cause analysis on any metric. | **Improved diagnostic capabilities** and allowed stakeholders to identify failure factors (like specific zones or hours) without manual reporting delay. |
+
 ## 🛠️ Technology Stack
 
 | Component | Technology | Purpose |
 | :--- | :--- | :--- |
 | **Data Source** | Local CSV (`ncr_bookings_import.csv`) | Raw data containing 150,000+ ride records. |
-| **Data Wrangling** | **MySQL** | Core ETL for cleansing, aggregation, and structural transformation. |
-| **Data Modeling** | **MySQL Views** & **Power Query** | Creation of efficient **Star Schema** components. |
-| **Visualization** | **Power BI** | Building the final interactive executive dashboard with advanced analytics. |
+| **Data Processing** | **Python** 🐍 / **Pandas** 🐼 | Initial data cleaning, script automation, and manipulation. |
+| **Database/ETL** | **MySQL** 🐬 | Core ETL for cleansing, aggregation, and structural transformation. |
+| **Data Modeling** | **MySQL Views** 🗄️ / **Power Query** | Creation of efficient **Star Schema** components. |
+| **Visualization** | **Power BI** 📊 | Building the final interactive executive dashboard with advanced analytics. |
+| **Licensing** | **Apache 2.0** 📜 | Open-source standard for code contribution and reuse. |
 
 ***
 
@@ -85,3 +97,22 @@ To replicate or review this project:
 1.  **Database Setup:** Create a MySQL database and execute the necessary SQL scripts to load data into the `rides` table and create the analytical views.
 2.  **Load into Power BI:** Connect Power BI to the MySQL database and load the required fact and view tables.
 3.  **Build Model:** Replicate the **Star Schema** relationships defined between the Dimension and Fact tables.
+
+---
+
+## 📸 Dashboard and tooltip Preview
+<img width="1276" height="716" alt="image" src="https://github.com/user-attachments/assets/b4597134-f869-4bc0-bfa6-9f3461097eb3" />
+<img width="454" height="348" alt="image" src="https://github.com/user-attachments/assets/863e37bf-4446-426c-a9a1-f92d2ab41cb7" />
+<img width="598" height="378" alt="image" src="https://github.com/user-attachments/assets/0e6d7049-18fc-4cd9-a725-cb707ebb3823" />
+
+
+---
+
+---
+
+## 👤 Author
+**Milan Kumar**  
+- B.Tech CSE | Data Analytics Enthusiast  
+- 🌐 [LinkedIn](https://www.linkedin.com/in/kumarmilann/) | [GitHub](https://github.com/mr-milannn/)  
+
+---
